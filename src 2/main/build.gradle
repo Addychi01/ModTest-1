@@ -1,0 +1,41 @@
+plugins {
+    id 'fabric-loom' version '1.5-SNAPSHOT'
+    id 'maven-publish'
+}
+
+group = 'net.yourdomain.signscanner'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Fabric API for Minecraft 1.21.5
+    modImplementation "net.fabricmc:fabric-loader:0.15.10"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.100.0+1.21.5"
+}
+
+minecraft {
+    version = "1.21.5"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = 'UTF-8'
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        signscanner {
+            sourceSet sourceSets.main
+        }
+    }
+}
