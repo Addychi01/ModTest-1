@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "signscanner",
+  "version": "1.0.0",
+  "name": "QuickShop Sign Scanner",
+  "description": "Automatically scans and logs QuickShop signs.",
+  "authors": ["you"],
+  "entrypoints": {
+    "client": [
+      "net.getrich.signscanner.SignScannerMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "1.21.5",
+    "fabric": "*"
+  }
+}
